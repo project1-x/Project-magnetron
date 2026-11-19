@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inside the Microwave: Standing Waves</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>How a Microwave Actually Heats Food</h1>
+    <p class="subtitle">
+      Microwaves bounce off the metal walls to form a <b>standing wave</b>. 
+      Where waves cancel out (nodes), food stays cold—which is why your plate needs to spin.
+    </p>
 
+    <div class="main-box">
+      <canvas id="simCanvas" width="440" height="300"></canvas>
+
+      <div class="controls">
+        <label>
+          Wave Frequency (GHz): <span id="freqVal">2.45</span>
+          <input type="range" id="freq" min="1.5" max="3.5" step="0.05" value="2.45" />
+        </label>
+
+        <label>
+          Magnetron Power (%): <span id="pwrVal">80</span>%
+          <input type="range" id="power" min="10" max="100" step="5" value="80" />
+        </label>
+
+        <label class="checkbox-row">
+          <input type="checkbox" id="turntable" checked />
+          Spin Turntable (Move food through cold spots)
+        </label>
+
+        <div class="btn-row">
+          <button id="resetBtn">Reset Food Temp</button>
+        </div>
+
+        <div class="readout" id="stats">
+          Hottest Spot: 20°C | Coldest Spot: 20°C
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
